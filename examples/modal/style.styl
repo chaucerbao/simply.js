@@ -1,0 +1,122 @@
+.style-1 {
+  &.modal-overlay {
+    background-color: rgba(0, 0, 0, .65);
+    opacity: 0;
+    transition: opacity .5s;
+
+    .modal-frame {
+      transform: translateY(-100px);
+      transition: transform .5s;
+    }
+
+    .modal-content {
+      border: solid black .1rem;
+      border-radius: .4rem;
+      padding: .4rem 1rem;
+    }
+
+    .modal-cancel {
+      color: #fff;
+      position: absolute;
+      right: 0;
+      bottom: -1.25rem;
+      text-decoration: none;
+      &:before {
+        content: 'Cancel'
+      }
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &.is-active {
+      opacity: 1;
+
+      .modal-frame {
+        transform: translateY(0);
+      }
+    }
+  }
+}
+
+.style-2 {
+  &.modal-overlay {
+    background-color: rgba(0, 0, 64, .6);
+    opacity: 0;
+    transition: opacity .5s;
+
+    .modal-frame {
+      transform: rotate(1080deg) scale(.2);
+      transition: transform .8s;
+    }
+
+    .modal-content {
+      border: solid #888 .2rem; border-right: solid black .2rem; border-bottom: solid black .2rem;
+      padding: .4rem 1rem;
+    }
+
+    .modal-cancel {
+      background-color: black;
+      border-radius: 50%;
+      border: solid white .3rem;
+      position: absolute; top: -1rem; left: -.75rem;
+      transition: background-color .5s;
+      width: 1.5rem; height: 1.5rem;
+      &:before {
+        color: white;
+        content: 'x';
+        font-size: 1.25rem;
+        position: absolute; top: 0; left: 0; bottom: 0; right: 0;
+        text-align: center;
+      }
+      &:hover {
+        background-color: #888;
+      }
+    }
+
+    &.is-active {
+      opacity: 1;
+
+      .modal-frame {
+        transform: rotate(0) scale(1);
+      }
+    }
+  }
+}
+
+.style-3 {
+  &.modal-overlay {
+    background: linear-gradient(to bottom, rgba(256, 0, 0, .6) 0%, rgba(256, 256, 0, .6) 100%);
+    opacity: 0;
+    transition: opacity .5s;
+    perspective: 1500;
+
+    .modal-frame {
+      transform: rotateY(90deg);
+      transition: transform 1s;
+    }
+
+    .modal-content {
+      padding: .4rem 1rem;
+    }
+
+    .modal-cancel {
+      &:before {
+        background-color: #444;
+        border-radius: 0 0 0 .75rem;
+        color: white;
+        content: 'No, thanks!'
+        padding: .25rem 1rem;
+        position: absolute; top: 0; right: 0;
+      }
+    }
+
+    &.is-active {
+      opacity: 1;
+
+      .modal-frame {
+        transform: rotateY(0);
+      }
+    }
+  }
+}
