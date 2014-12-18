@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Modal examples</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../modal.min.css">
+    <link rel="stylesheet" href="modal/style.css">
+  </head>
+
+  <body>
+    <h1>Simply modal</h1>
+
+    <a id="open-modal" class="button" href="#open-modal">Open Modal</a>
+
+    <p>Load content from a DOM Element, URL, or directly inline</p>
+    <ul>
+      <li><a id="open-dom-element" href="#">DOM Element</a></li>
+      <li><a id="open-url" href="#">URL</a></li>
+      <li><a id="open-inline" href="#">Inline</a></li>
+    </ul>
+
+    <template id="dom-element">
+      <h1>DOM Element</h1>
+      <a class="modal-close" href="#close">Close</a>
+    </template>
+
+    <script src="../simply.min.js"></script>
+    <script src="modal/script.js"></script>
+  </body>
+</html>
