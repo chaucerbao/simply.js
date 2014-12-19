@@ -60,7 +60,7 @@ Simply.sticky = (function() {
     }
   };
 
-  var render = function() {
+  var render = function(isForced) {
     var sticky,
       element,
       start,
@@ -75,7 +75,11 @@ Simply.sticky = (function() {
       current = window.pageYOffset;
 
       /* If the element is off-screen, don't render it */
-      if (current + window.innerHeight < start || current > end) {
+      if (!isForced && (current + window.innerHeight < start || current > end)) {
+        if (element.active) {
+          render(true);
+          element.active = false;
+        }
         continue;
       }
 
@@ -87,6 +91,8 @@ Simply.sticky = (function() {
       } else if (start > window.pageYOffset) {
         removeClass(element, 'sticky-pinned');
       }
+
+      element.active = true;
     }
   };
 
