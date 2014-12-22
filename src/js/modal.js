@@ -117,7 +117,7 @@ Simply.modal = (function() {
 
     /* If width/height is set to 'auto', find the dimensions of the contents */
     addClass(content, 'dimensions');
-    var dimensions = content.getBoundingClientRect();
+    var dimensions = rect(content);
     if (width === 'auto') {
       width = (isFrame ? content.scrollWidth : dimensions.width) + 'px';
     }

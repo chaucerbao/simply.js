@@ -42,8 +42,8 @@ var body = document.body,
     var rect = JSON.parse(JSON.stringify(element.getBoundingClientRect()));
 
     if (isAbsolute) {
-      var pageYOffset = window.pageYOffset,
-        pageXOffset = window.pageXOffset;
+      var pageXOffset = window.pageXOffset,
+        pageYOffset = window.pageYOffset;
 
       rect.top += pageYOffset;
       rect.bottom += pageYOffset;
