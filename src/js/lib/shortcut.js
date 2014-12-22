@@ -38,15 +38,18 @@ var body = document.body,
   computedStyle = function(element) {
     return window.getComputedStyle(element, null);
   },
-  rect = function(element) {
-    var rect = JSON.parse(JSON.stringify(element.getBoundingClientRect())),
-      pageYOffset = window.pageYOffset,
-      pageXOffset = window.pageXOffset;
+  rect = function(element, isAbsolute) {
+    var rect = JSON.parse(JSON.stringify(element.getBoundingClientRect()));
 
-    rect.top += pageYOffset;
-    rect.bottom += pageYOffset;
-    rect.left += pageXOffset;
-    rect.right += pageXOffset;
+    if (isAbsolute) {
+      var pageYOffset = window.pageYOffset,
+        pageXOffset = window.pageXOffset;
+
+      rect.top += pageYOffset;
+      rect.bottom += pageYOffset;
+      rect.left += pageXOffset;
+      rect.right += pageXOffset;
+    }
 
     return rect;
   };

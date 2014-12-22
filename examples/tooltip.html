@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tooltip examples</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../tooltip.min.css">
+    <link rel="stylesheet" href="tooltip/style.css">
+  </head>
+
+  <body id="tooltip">
+    <h1>Simply tooltip</h1>
+
+    <ul>
+      <li><span class="tooltip" data-tooltip="#dom-element">DOM Element</span></li>
+      <li><span class="tooltip" data-tooltip="url.html">URL</span></li>
+      <li><span class="tooltip" data-tooltip="<h1>Inline HTML</h1><p>This is inline HTML</p>">Inline</span></li>
+    </ul>
+
+    <template id="dom-element">
+      <h1>DOM Element</h1>
+      <a class="modal-close" href="#close">Close</a>
+    </template>
+
+    <script src="../simply.min.js"></script>
+    <script src="tooltip/script.js"></script>
+  </body>
+</html>

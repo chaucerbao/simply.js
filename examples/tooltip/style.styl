@@ -1,0 +1,12 @@
+.style-1 {
+  &.tooltip-content {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s, visibility .5s;
+
+    &.is-active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
