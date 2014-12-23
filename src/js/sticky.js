@@ -53,8 +53,8 @@ Simply.sticky = (function() {
 
       stack.push({
         element: element,
-        start: rect(element).top - parseFloat(elementMarginTop),
-        end: rect(parent(options.container, element) || body).bottom,
+        start: rect(element, true).top - parseFloat(elementMarginTop),
+        end: rect(parent(options.container, element) || body, true).bottom,
         fullHeight: element.offsetHeight + parseFloat(elementMarginTop) + parseFloat(elementMarginBottom)
       });
     }
