@@ -15,13 +15,21 @@
     <h1>Simply tooltip</h1>
 
     <ul>
-      <li><span class="tooltip" data-tooltip="#dom-element">DOM Element</span></li>
-      <li><span class="tooltip" data-tooltip="url.html">URL</span></li>
-      <li><span class="tooltip" data-tooltip="<h1>Inline HTML</h1><p>This is inline HTML</p>">Inline</span></li>
+      <li><span class="section-1 tooltip" data-tooltip="#dom-element">DOM Element</span></li>
+      <li><span class="section-1 tooltip" data-tooltip="url.html">URL</span></li>
+      <li><span class="section-1 tooltip" data-tooltip="<h1>Inline HTML</h1><p>This is inline HTML</p>">Inline</span></li>
+    </ul>
+
+    <ul>
+      <li><span class="section-2 tooltip" data-tooltip="#dom-element-2">DOM Element</span></li>
     </ul>
 
     <template id="dom-element">
       <h1>DOM Element</h1>
+    </template>
+
+    <template id="dom-element-2">
+      <h1>Interactive</h1>
     </template>
 
     <script src="../simply.min.js"></script>
