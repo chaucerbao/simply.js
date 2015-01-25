@@ -70,9 +70,7 @@ gulp.task('js', function() {
     .pipe(plumber({ errorHandler: notify.onError({ title: 'Javascript Error', message: '<%= error.message %>' }) }))
     .pipe(concat(files.js.dest))
     .pipe(insert.wrap('(function(Simply, window, document) { "use strict";', 'window.simply = Simply; }({}, window, document));'))
-    .pipe(uglify(
-      { mangle: false, compress: false, output: { beautify: true } }
-    ))
+    .pipe(uglify())
     .pipe(rename({ extname: '.min.js' }))
     .pipe(gulp.dest(paths.js.dest))
     .pipe(notify({ title: 'Javascript Compiled', message: 'Success', onLast: true }));
