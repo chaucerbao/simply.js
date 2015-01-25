@@ -2,8 +2,7 @@
 var paths = {
   css: { src: './src/css/', dest: './dist/' },
   js: { src: './src/js/', dest: './dist/' },
-  examples: { src: './examples/', dest: './dist/examples/' },
-  bower: { src: './bower_components/' }
+  examples: { src: './examples/', dest: './dist/examples/' }
 };
 
 /* Files */
@@ -65,13 +64,12 @@ gulp.task('css', function() {
 
 gulp.task('js', function() {
   gulp.src([
-    paths.bower.src + 'riotjs/lib/observable.js',
     paths.js.src + 'lib/*.js',
     paths.js.src + '*.js'
   ])
     .pipe(plumber({ errorHandler: notify.onError({ title: 'Javascript Error', message: '<%= error.message %>' }) }))
     .pipe(concat(files.js.dest))
-    .pipe(insert.wrap('(function(Simply, window, document, riot) { "use strict";', 'window.simply = Simply; }({}, window, document, {}));'))
+    .pipe(insert.wrap('(function(Simply, window, document) { "use strict";', 'window.simply = Simply; }({}, window, document));'))
     .pipe(uglify(
       { mangle: false, compress: false, output: { beautify: true } }
     ))
