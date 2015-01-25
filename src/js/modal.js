@@ -41,7 +41,7 @@ Simply.modal = (function() {
     }, options || {});
 
     var layer = createLayer(options),
-      content = riot.observable(contentNode(layer));
+      content = observable(contentNode(layer));
 
     /* Need to append the to DOM before loading content, otherwise we can't access the 'contentWindow' of an iFrame */
     attach(container, layer);
