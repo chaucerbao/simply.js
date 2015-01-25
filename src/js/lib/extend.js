@@ -18,3 +18,5 @@ var extend = function(out) {
 
   return out;
 };
+
+Simply.extend = extend;
